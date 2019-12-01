@@ -36,4 +36,22 @@ let input = readInput(path: "input.txt")
 let fuel = input.modules.reduce(0, {x,y in
     x + Int(floor(Double(y) / 3) - 2)
 })
-print(fuel)
+print("Q1: \(fuel)")
+
+
+//part 2
+func calculateTotalFuelForMass(mass: Int) -> Int {
+
+    let tmp = Int(floor(Double(mass) / 3)) - 2
+    if tmp <= 0 {
+        return 0
+    }
+
+    return tmp + calculateTotalFuelForMass(mass: tmp)
+}
+
+let tmpInput = input
+let totalFuel = tmpInput.modules.reduce(0, {x,y in
+    x + calculateTotalFuelForMass(mass: y)
+})
+print("Q2: \(totalFuel)")
