@@ -29,7 +29,7 @@ class IntcodeComputer {
         self.input = input
     }
 
-    func run() {
+    func run() -> Int {
 
         var current = 0
         var operation: Int
@@ -58,7 +58,7 @@ class IntcodeComputer {
             current += 4
         }
 
-        print(input)
+        return input[0]
 
     }
 
@@ -74,7 +74,23 @@ class IntcodeComputer {
 //IntcodeComputer(input: testData3).run()
 //IntcodeComputer(input: testData4).run()
 
-var data = readInput(path: "input.txt")
-data[1] = 12
-data[2] = 2
-IntcodeComputer(input: data).run()
+let data = readInput(path: "input.txt")
+//part 1
+var input1 = data
+input1[1] = 12
+input1[2] = 2
+let result = IntcodeComputer(input: input1).run()
+print("ans 1: \(result)")
+
+//part 2
+for noun in 0...99 {
+    for verb in 0...99 {
+        var input = data
+        input[1] = noun
+        input[2] = verb
+        let result = IntcodeComputer(input: input).run()
+        if result == 19690720 {
+            print("ans 2: \(100 * noun + verb)")
+        }
+    }
+}
