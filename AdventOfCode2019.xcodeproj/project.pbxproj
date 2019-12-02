@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		41F053A552385359364A76C0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F05BB3660901328AE8E3E4 /* main.swift */; };
+		41F055F1DA84970C5EC0000D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F056140C756F49A358CF1B /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,9 +24,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		41F056140C756F49A358CF1B /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		41F05BB3660901328AE8E3E4 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		41F05CC5CFC42494E0839B11 /* input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 		41F05CDDBEB49D6E1F524A84 /* AdventOfCode2019 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AdventOfCode2019; sourceTree = BUILT_PRODUCTS_DIR; };
+		41F05D96F473543B4B261A3F /* input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,8 +71,18 @@
 			isa = PBXGroup;
 			children = (
 				41F05188313E5BA5D481E94D /* 01_FuelCounterUpper */,
+				41F05FCD01F923C47EFF4E5A /* 02_IntcodeComputer */,
 			);
 			path = AdventOfCode2019;
+			sourceTree = "<group>";
+		};
+		41F05FCD01F923C47EFF4E5A /* 02_IntcodeComputer */ = {
+			isa = PBXGroup;
+			children = (
+				41F056140C756F49A358CF1B /* main.swift */,
+				41F05D96F473543B4B261A3F /* input.txt */,
+			);
+			path = 02_IntcodeComputer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41F053A552385359364A76C0 /* main.swift in Sources */,
+				41F055F1DA84970C5EC0000D /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
