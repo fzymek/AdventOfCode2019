@@ -7,7 +7,7 @@ import Foundation
 import Cocoa
 
 
-func readInput(path: String) -> [Int] {
+fileprivate func readInput(path: String) -> [Int] {
     let fm = FileManager.default
     let inputPath = fm.currentDirectoryPath + "/" + path
     let inputData = try? String(contentsOfFile: inputPath);
@@ -22,7 +22,7 @@ func readInput(path: String) -> [Int] {
 
 //print(readInput(path: "input.txt"))
 
-class IntcodeComputer {
+fileprivate class IntcodeComputer {
     var input: [Int]
 
     init(input: [Int]) {
@@ -64,33 +64,42 @@ class IntcodeComputer {
 
 }
 
-//let testData1 = [1,0,0,0,99]
-//let testData2 = [2,3,0,3,99]
-//let testData3 = [2,4,4,5,99,0]
-//let testData4 = [1,1,1,4,99,5,6,0,99]
-//
-//IntcodeComputer(input: testData1).run()
-//IntcodeComputer(input: testData2).run()
-//IntcodeComputer(input: testData3).run()
-//IntcodeComputer(input: testData4).run()
+fileprivate struct Day2 {
 
-let data = readInput(path: "input.txt")
-//part 1
-var input1 = data
-input1[1] = 12
-input1[2] = 2
-let result = IntcodeComputer(input: input1).run()
-print("ans 1: \(result)")
+    let data = readInput(path: "input.txt")
 
-//part 2
-for noun in 0...99 {
-    for verb in 0...99 {
-        var input = data
-        input[1] = noun
-        input[2] = verb
-        let result = IntcodeComputer(input: input).run()
-        if result == 19690720 {
-            print("ans 2: \(100 * noun + verb)")
+    func part1() {
+        //let testData1 = [1,0,0,0,99]
+        //let testData2 = [2,3,0,3,99]
+        //let testData3 = [2,4,4,5,99,0]
+        //let testData4 = [1,1,1,4,99,5,6,0,99]
+        //
+        //IntcodeComputer(input: testData1).run()
+        //IntcodeComputer(input: testData2).run()
+        //IntcodeComputer(input: testData3).run()
+        //IntcodeComputer(input: testData4).run()
+        //part 1
+        var input1 = data
+        input1[1] = 12
+        input1[2] = 2
+        let result = IntcodeComputer(input: input1).run()
+        print("ans 1: \(result)")
+    }
+
+    func part2() {
+
+        //part 2
+        for noun in 0...99 {
+            for verb in 0...99 {
+                var input = data
+                input[1] = noun
+                input[2] = verb
+                let result = IntcodeComputer(input: input).run()
+                if result == 19690720 {
+                    print("ans 2: \(100 * noun + verb)")
+                }
+            }
         }
+
     }
 }
