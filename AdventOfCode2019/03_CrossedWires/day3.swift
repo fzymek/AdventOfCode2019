@@ -187,7 +187,7 @@ struct Day3 {
 
 }
 
-Day3().part1()
-Day3().part2()
+//Day3().part1()
+//Day3().part2()
 
 
